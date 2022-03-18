@@ -1,4 +1,3 @@
-let data = [100,440,500]
 let dataObg=[{
     pos:10,
     neg:30,
@@ -10,7 +9,7 @@ let dataObg=[{
     neit:500
 },
     {
-    pos:100,
+    pos:300,
     neg:300,
     neit:500
 },
@@ -26,15 +25,16 @@ let  playParam = function(DATA){
   var  wave;
   wave= new  p5.Oscillator('sine');
   wave.setType('sine')
-  wave.amp(1);
-  wave.freq(DATA)
+  wave.amp(DATA.neg);
+  wave.freq(DATA.pos)
+  console.log(`pos:${DATA.pos}, neg: ${DATA.neg}, nietral: ${DATA.neit}`)
   wave.start();
 }
 
 let playData = function (){
     // data.forEach((x)=>playParam(x))
-    for (let i = 0; i < data.length; i++) {
-        playParam(data[i])
+    for (let i = 0; i < dataObg.length; i++) {
+        playParam(dataObg[i])
 
     }
 
