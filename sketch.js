@@ -32,7 +32,12 @@ let  playParam = function(DATA){
 }
 
 let playData = function (){
-    data.forEach((x)=>playParam(x))
+    // data.forEach((x)=>playParam(x))
+    for (let i = 0; i < data.length; i++) {
+        playParam(data[i])
+
+    }
+
 }
 
 
